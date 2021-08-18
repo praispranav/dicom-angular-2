@@ -6,12 +6,25 @@
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false" yPosition="below">
       <button *ngFor="let tool of toolNames" mat-menu-item (value)="tool" (click)="onChangeTool(tool)">{{ tool }}</button>
+      <button  mat-menu-item (value)="draw2" (click)="onChangeTool2('Draw')">Circle</button>
+      <button  mat-menu-item (value)="ellipse" (click)="onChangeToo3('Draw')">{{ellipse}}</button>
+      <button  mat-menu-item (value)="rectangle" (click)="onChangeToo4('Draw')">{{rectangle}}</button>
+      <button  mat-menu-item (value)="freehand" (click)="onChangeToo5('Draw')">{{freehand}}</button>
+      <button  mat-menu-item (value)="prot" (click)="onChangeToo6('Draw')">{{prot}}</button>
+      <button  mat-menu-item (value)="roi" (click)="onChangeToo7('Draw')">{{roi}}</button>
+      <button  mat-menu-item (value)="point" (click)="onChangeToo8('Point2D')">{{point}}</button>
+      
     </mat-menu>
 
     <button mat-raised-button color="primary" (click)="onReset()" [disabled]="!dataLoaded">Reset</button>
     <button mat-raised-button color="primary" (click)="openTagsDialog()" [disabled]="!dataLoaded">Tags</button>
   </div>
-  <div id="dropBox"></div>
+  <div id="dropBox">
+    
+    <div id="point" style="position:absolute;z-index: 1000000;">
+  
+    </div>
+  </div>
   <div class="layerContainer"></div>
   <div class="legend mat-small">
     <p>Powered by
